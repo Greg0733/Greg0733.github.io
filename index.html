@@ -1,15 +1,22 @@
 <!doctype html>
 <html lang="fr">
-  <head> 
+  <head>
+    <style type="text/css">
+      body {
+        visibility: hidden;
+      }
+    </style>
     <meta charset = "utf-8" > 
     <title>Redirection vers superprof</title>
     <!-- <link rel = "stylesheet" type = "text/css" href = "css/style.css" > -->
   </head>
 
   <body>
-    <noscript>
-      Si vous n'êtes pas redirigé.e automatiquement, <a href="https://www.superprof.be/cours-maths-sciences-liege-visio-ingenieur-civil-diplome.html">Cliquez ici</a>
-    </noscript>
+    Si vous n'êtes pas redirigé.e automatiquement, voici les liens : <br>
+    <a id="secondaire" href="https://www.superprof.be/cours-maths-sciences-liege-visio-ingenieur-civil-diplome.html">Maths et sciences niveau secondaire</a> <br>
+    <a id="etudes_superieures" href="https://www.superprof.be/cours-soutient-differentes-sciences-ingenieur-liege-visio-ingenieur-civil-diplome.html">Maths et sciences niveau supérieur</a> <br>
+    <a id="programmation" href="https://www.superprof.be/cours-programmation-aide-projets-langages-liege-visio-informaticien-diplome.html">Programmation</a> <br>
+    <a id="informatique" href="https://www.superprof.be/cours-informatique-theorique-developpement-liege-visio-ingenieur-civil-informatique.html">Informatique (aspects théoriques)</a> <br>
     <script>
       function findGetParameter(parameterName) {
         let result = null;
@@ -24,33 +31,21 @@
         return result;
       }
 
-      let page = findGetParameter("page");
-      console.log(page);
-      switch (page) {
-      case '1':
-        window.location.replace("https://www.superprof.be/cours-maths-sciences-liege-visio-ingenieur-civil-diplome.html");
-        break;
-
-      case '2':
-        window.location.replace("https://www.superprof.be/cours-soutient-differentes-sciences-ingenieur-liege-visio-ingenieur-civil-diplome.html");
-        break;
-
-      case '3':
-        window.location.replace("https://www.superprof.be/cours-programmation-aide-projets-langages-liege-visio-informaticien-diplome.html");
-        break;
-
-      case '4':
-        window.location.replace("https://www.superprof.be/cours-informatique-theorique-developpement-liege-visio-ingenieur-civil-informatique.html");
-        break;
-
-      default:
-        window.location.replace("https://www.superprof.be/cours-maths-sciences-liege-visio-ingenieur-civil-diplome.html");
-        break;
+      let page = findGetParameter("annonce");
+      let a_html = document.querySelector("#" + page);
+      if (a_html == null) {
+        document.querySelector("body").style.visibility = "visible";
+      } else {
+        window.location.replace(a_html.href);
       }
-  </script>
-</body>
-  
+    </script>
 
-
-
+    <noscript>
+      <style type="text/css">
+        body {
+          visibility: visible;
+        }
+      </style>
+    </noscript>
+  </body>
 </html>
