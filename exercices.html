@@ -30,15 +30,15 @@
     <script src="url.js"></script>
     <script>
         function add_exos(container, title) {
-            before = "<li><h3>" + title + "</h3><ol>";
-            after = "</ol></li>";
+            before = "<li><h3>" + title + '</h3><ol type="a">';
+            after = '</ol></li>';
             insertFileAsChild("exercices/" + title + ".html", container, before, after);
         }
     </script>
 </head>
 
 <body>
-    <ol class="exercises_list">
+    <ol class="exercises_list" type="i">
 
     </ol>
 
