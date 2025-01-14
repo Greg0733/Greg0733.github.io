@@ -26,11 +26,10 @@
     <link rel="icon" href="assets/blue.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="prev" type="application/json+oembed" href="https://greg0733.github.io/oEmbed.json">
-    <script src="javascript.js" defer></script>
+    <script src="url.js"></script>
 </head>
 
 <body>
-    <!-- Do not move, this script has to be executed now -->
     <script>
         document.querySelector("body").style.visibility = "hidden";
     </script>
@@ -40,5 +39,16 @@
     <a id="etudesSuperieures" href="https://www.superprof.be/cours-soutient-differentes-sciences-ingenieur-liege-visio-ingenieur-civil-diplome.html">Maths et sciences niveau supérieur</a> <br>
     <a id="programmation" href="https://www.superprof.be/cours-programmation-aide-projets-langages-liege-visio-informaticien-diplome.html">Programmation</a> <br>
     <a id="informatique" href="https://www.superprof.be/cours-informatique-theorique-developpement-liege-visio-ingenieur-civil-informatique.html">Informatique (aspects théoriques)</a> <br>
+    <a id="statistiques" href="https://www.superprof.be/diplome-ingenieur-civil-donne-cours-statistiques-etudiants-petit-coup-pouce-decrocher-credits.html">Statistiques</a> <br>
+
+    <script>
+        let page = findGetParameter("annonce");
+        let a_html = document.querySelector("#" + page);
+        if (a_html == null) {
+          document.querySelector("body").style.visibility = "visible";
+        } else {
+          window.location.replace(a_html.href);
+        }
+    </script>
 </body>
 </html>
